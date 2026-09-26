@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Calendar, DollarSign, Gift, Image, Sparkles, Store, Wrench } from "lucide-react";
-import hero from "@/assets/hero.png.asset.json";
-import avatar from "@/assets/avatar.png.asset.json";
+import hero from "@/assets/workshop-cover.jpg";
+import avatar from "@/assets/speaker-portrait.jpg";
+import { CherryBlossoms } from "@/components/CherryBlossoms";
+import { Button } from "@/components/ui/button";
 
 const REGISTER = "https://zalo.me/0978076936";
 
@@ -12,6 +14,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Workshop huấn luyện cấp tốc cùng Phong Menly: từ skill tiến hóa thành 1 AI Agent sống thực sự." },
       { property: "og:title", content: "Nuôi Agent Cày Thay Mình 24/7" },
       { property: "og:description", content: "Workshop KOL AI cùng Phong Menly — 20:00 ngày 21/9." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -28,27 +32,34 @@ const benefits = [
 
 function Cta() {
   return (
-    <a href={REGISTER} target="_blank" rel="noreferrer" className="cta-glow inline-block rounded-2xl bg-primary px-10 py-4 font-bold uppercase text-primary-foreground transition-transform hover:scale-105">
-      Đăng ký ngay
-    </a>
+    <Button asChild className="cta-glow h-auto rounded-md px-10 py-4 text-base font-bold uppercase transition-transform hover:scale-105">
+      <a href={REGISTER} target="_blank" rel="noreferrer">Đăng ký ngay</a>
+    </Button>
   );
 }
 
 function Index() {
   return (
     <main className="font-sans">
-      <section className="hero-glow px-4 pt-16 pb-20 text-center">
-        <h1 className="text-4xl font-black uppercase tracking-tight md:text-6xl">
+      <CherryBlossoms />
+      <section className="hero-glow px-4 pt-12 pb-16 text-center md:pt-16">
+        <p className="mx-auto mb-4 w-fit rounded-full border border-primary/25 bg-accent px-4 py-1 text-xs font-bold uppercase text-primary">Huấn luyện cấp tốc 1 lần duy nhất</p>
+        <h1 className="mx-auto max-w-5xl text-4xl font-extrabold uppercase leading-tight md:text-5xl">
           Nuôi Agent cày thay mình <span className="text-primary">24/7</span>
         </h1>
-        <p className="mt-4 text-lg font-semibold text-muted-foreground md:text-2xl">Từ skill tiến hóa thành 1 Agent sống thực sự</p>
-        <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-primary/40 bg-accent px-6 py-3 text-lg font-bold">
+        <p className="mt-2 text-lg font-bold text-muted-foreground md:text-xl">Từ skill tiến hóa thành 1 Agent sống thực sự</p>
+        <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-primary/40 bg-accent px-5 py-2 text-sm font-bold">
           <Calendar className="h-5 w-5 text-primary" /> 20:00 ngày 21/9
         </div>
-        <div className="glow-frame mx-auto mt-10 max-w-5xl overflow-hidden rounded-3xl">
-          <img src={hero.url} alt="Nuôi AI Agent cày tiền" className="w-full" />
+        <div className="glow-frame relative mx-auto mt-7 aspect-[16/9] max-w-5xl overflow-hidden rounded-lg bg-foreground">
+          <img src={hero} alt="Không gian làm việc AI Agent" className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-y-0 left-0 flex w-[56%] flex-col justify-center px-[5%] text-left">
+            <p className="cover-kicker text-sm font-bold uppercase md:text-2xl">Nuôi AI Agent</p>
+            <p className="cover-title mt-1 text-3xl font-black uppercase leading-[1.12] md:text-7xl">Cày tiền</p>
+            <span className="mt-4 h-1 w-12 bg-cover-accent md:w-20" />
+          </div>
         </div>
-        <div className="mt-12"><Cta /></div>
+        <div className="mt-9"><Cta /></div>
       </section>
 
       <section className="mx-auto max-w-3xl px-4 py-16">
@@ -73,7 +84,7 @@ function Index() {
         <h2 className="text-center text-3xl font-extrabold text-primary">Diễn giả Huấn luyện cấp tốc</h2>
         <div className="hero-glow mt-8 flex flex-col items-center gap-8 rounded-3xl border p-8 md:flex-row md:items-start">
           <div className="relative shrink-0">
-            <img src={avatar.url} alt="Phong Menly" className="h-32 w-32 rounded-full object-cover shadow-lg" />
+            <img src={avatar} alt="Phong Menly" className="h-32 w-32 rounded-full object-cover shadow-lg" />
             <span className="absolute -right-2 bottom-2 rounded-full bg-primary px-2 py-0.5 text-xs font-bold text-primary-foreground">KOL AI</span>
           </div>
           <div>

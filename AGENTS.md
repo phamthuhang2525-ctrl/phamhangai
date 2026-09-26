@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the decorative cherry-blossom scene in a dynamically imported Three.js client component with reduced-motion fallback, because SSR must not initialize WebGL and motion must remain optional.

@@ -1,0 +1,3 @@
+- [x] Replace the workshop cover with a professionally art-directed version of the existing subject.
+- [x] Replace the speaker portrait while preserving his identity.
+- [x] Match the reference site's Be Vietnam Pro typography and add subtle 3D falling cherry blossoms.
