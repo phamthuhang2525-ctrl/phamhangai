@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Calendar, DollarSign, Gift, Image, Sparkles, Store, Wrench } from "lucide-react";
-import hero from "@/assets/workshop-cover.jpg";
-import avatar from "@/assets/speaker-portrait.jpg";
+import hero from "@/assets/pham-hang-cover.jpg";
+import avatarAsset from "@/assets/pham-hang-portrait.png.asset.json";
 import { CherryBlossoms } from "@/components/CherryBlossoms";
 import { Button } from "@/components/ui/button";
 
@@ -10,10 +10,10 @@ const REGISTER = "https://zalo.me/0978076936";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nuôi Agent Cày Thay Mình 24/7 — Workshop KOL AI" },
-      { name: "description", content: "Workshop huấn luyện cấp tốc cùng Phong Menly: từ skill tiến hóa thành 1 AI Agent sống thực sự." },
+      { title: "Nuôi Agent Cày Thay Mình 24/7 — Workshop cùng Phạm Hằng" },
+      { name: "description", content: "Workshop huấn luyện cấp tốc cùng Phạm Hằng: từ skill tiến hóa thành 1 AI Agent sống thực sự." },
       { property: "og:title", content: "Nuôi Agent Cày Thay Mình 24/7" },
-      { property: "og:description", content: "Workshop KOL AI cùng Phong Menly — 20:00 ngày 21/9." },
+      { property: "og:description", content: "Workshop AI cùng Phạm Hằng — 20:00 ngày 21/9." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -52,7 +52,7 @@ function Index() {
           <Calendar className="h-5 w-5 text-primary" /> 20:00 ngày 21/9
         </div>
         <div className="glow-frame relative mx-auto mt-7 aspect-[16/9] max-w-5xl overflow-hidden rounded-lg bg-foreground">
-          <img src={hero} alt="Không gian làm việc AI Agent" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={hero} alt="Phạm Hằng trong ảnh bìa workshop" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-y-0 left-0 flex w-[56%] flex-col justify-center px-[5%] text-left">
             <p className="cover-kicker text-sm font-bold uppercase md:text-2xl">Nuôi AI Agent</p>
             <p className="cover-title mt-1 text-3xl font-black uppercase leading-[1.12] md:text-7xl">Cày tiền</p>
@@ -82,27 +82,14 @@ function Index() {
 
       <section className="mx-auto max-w-3xl px-4 py-16">
         <h2 className="text-center text-3xl font-extrabold text-primary">Diễn giả Huấn luyện cấp tốc</h2>
-        <div className="hero-glow mt-8 flex flex-col items-center gap-8 rounded-3xl border p-8 md:flex-row md:items-start">
+        <div className="mt-8 flex flex-col items-center gap-8 border-t border-b py-8 md:flex-row md:items-start">
           <div className="relative shrink-0">
-            <img src={avatar} alt="Phong Menly" className="h-32 w-32 rounded-full object-cover shadow-lg" />
-            <span className="absolute -right-2 bottom-2 rounded-full bg-primary px-2 py-0.5 text-xs font-bold text-primary-foreground">KOL AI</span>
+            <img src={avatarAsset.url} alt="Phạm Hằng" className="h-36 w-36 rounded-full object-cover object-top shadow-lg" />
           </div>
-          <div>
-            <h3 className="text-2xl font-bold">Phong Menly</h3>
-            <p className="font-semibold text-primary">KOL AI & Vibe Coding</p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {["AI Expert", "Content Creator", "Vibe Coding"].map((t) => (
-                <span key={t} className="rounded-full bg-accent px-3 py-1 text-xs font-medium">{t}</span>
-              ))}
-            </div>
-            <p className="mt-4 text-muted-foreground">Người tiên phong trong lĩnh vực KOL AI tại Việt Nam, chia sẻ kiến thức và kinh nghiệm thực tế về cách kiếm tiền với AI một cách hiệu quả.</p>
+          <div className="text-center md:text-left">
+            <h3 className="text-3xl font-extrabold">Phạm Hằng</h3>
+            <p className="mt-2 text-muted-foreground">Diễn giả buổi huấn luyện cấp tốc</p>
           </div>
-        </div>
-
-        <h2 className="mt-20 text-center text-2xl font-bold">🎬 Xem trước nội dung từ Phong Menly</h2>
-        <p className="mt-2 text-center text-sm text-muted-foreground">Video chia sẻ thực tế giúp bạn hiểu rõ hơn về hành trình KOL AI</p>
-        <div className="mt-6 aspect-video overflow-hidden rounded-2xl border shadow-lg">
-          <iframe className="h-full w-full" src="https://www.youtube.com/embed/K2H9p7IGhdo?autoplay=1&mute=1&loop=1&playlist=K2H9p7IGhdo&controls=1" title="Phong Menly" allow="autoplay; encrypted-media" allowFullScreen />
         </div>
         <div className="mt-8 text-center"><Cta /></div>
       </section>

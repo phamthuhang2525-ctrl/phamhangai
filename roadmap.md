@@ -1,3 +1,4 @@
 - [x] Replace the workshop cover with a professionally art-directed version of the existing subject.
 - [x] Replace the speaker portrait while preserving his identity.
 - [x] Match the reference site's Be Vietnam Pro typography and add subtle 3D falling cherry blossoms.
+- [x] Use the supplied photos for Phạm Hằng's cover and profile, and remove the previous speaker's unsupported biography and video.
