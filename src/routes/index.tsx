@@ -1,11 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Calendar, DollarSign, Gift, Image, Sparkles, Store, Wrench } from "lucide-react";
 import hero from "@/assets/pham-hang-cover.jpg";
 import avatarAsset from "@/assets/pham-hang-portrait.png.asset.json";
-import paymentQrAsset from "@/assets/pham-hang-payment-qr.jpg.asset.json";
 import { CherryBlossoms } from "@/components/CherryBlossoms";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,17 +30,14 @@ const benefits = [
 
 function Cta() {
   return (
-    <DialogTrigger asChild>
-      <Button className="cta-glow h-auto rounded-md px-10 py-4 text-base font-bold uppercase transition-transform hover:scale-105">
-        Đăng ký ngay
-      </Button>
-    </DialogTrigger>
+    <Button asChild className="cta-glow h-auto rounded-md px-10 py-4 text-base font-bold uppercase transition-transform hover:scale-105">
+      <Link to="/dang-ky">Đăng ký ngay</Link>
+    </Button>
   );
 }
 
 function Index() {
   return (
-    <Dialog>
     <main className="font-sans">
       <CherryBlossoms />
       <section className="hero-glow px-4 pt-12 pb-16 text-center md:pt-16">
@@ -103,22 +98,5 @@ function Index() {
         <div className="mt-8"><Cta /></div>
       </section>
     </main>
-    <DialogContent className="max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-md overflow-y-auto rounded-md p-5 sm:p-7">
-      <DialogHeader className="text-center sm:text-center">
-        <DialogTitle className="text-2xl font-extrabold leading-tight">Thanh toán đăng ký</DialogTitle>
-        <DialogDescription>Quét mã bằng ứng dụng ngân hàng để chuyển khoản.</DialogDescription>
-      </DialogHeader>
-      <div className="text-center">
-        <p className="text-sm font-medium text-muted-foreground">Số tiền thanh toán</p>
-        <p className="mt-1 text-4xl font-extrabold text-primary">50.000đ</p>
-      </div>
-      <img src={paymentQrAsset.url} alt="Mã QR chuyển khoản Techcombank cho PHAM THI THU HANG" className="mx-auto w-full max-w-[250px] object-contain" />
-      <div className="border-t pt-4 text-center text-sm leading-relaxed">
-        <p className="font-bold">TECHCOMBANK · PHAM THI THU HANG</p>
-        <p className="font-semibold">1903 1368 7616 68</p>
-        <p className="mt-2 text-muted-foreground">Vui lòng nhập số tiền 50.000đ khi chuyển khoản. Thanh toán không được xác nhận tự động trên trang này.</p>
-      </div>
-    </DialogContent>
-    </Dialog>
   );
 }
