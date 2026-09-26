@@ -1,11 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Calendar, DollarSign, Gift, Image, Sparkles, Store, Wrench } from "lucide-react";
 import hero from "@/assets/pham-hang-cover.jpg";
 import avatarAsset from "@/assets/pham-hang-portrait.png.asset.json";
 import { CherryBlossoms } from "@/components/CherryBlossoms";
 import { Button } from "@/components/ui/button";
-
-const REGISTER = "https://zalo.me/0978076936";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,7 +31,7 @@ const benefits = [
 function Cta() {
   return (
     <Button asChild className="cta-glow h-auto rounded-md px-10 py-4 text-base font-bold uppercase transition-transform hover:scale-105">
-      <a href={REGISTER} target="_blank" rel="noreferrer">Đăng ký ngay</a>
+      <Link to="/dang-ky">Đăng ký ngay</Link>
     </Button>
   );
 }
