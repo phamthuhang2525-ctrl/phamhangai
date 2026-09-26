@@ -60,6 +60,7 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-cover-accent: var(--cover-accent);
 }
 
 :root {
@@ -96,6 +97,7 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --cover-accent: oklch(0.91 0.18 99);
 }
 
 .dark {
@@ -131,6 +133,7 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  --cover-accent: oklch(0.91 0.18 99);
 }
 
 @layer base {
@@ -141,11 +144,19 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: "Be Vietnam Pro", sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
+  h1, h2, h3, h4, h5, h6 { font-family: "Be Vietnam Pro", sans-serif; }
 }
 
 @layer components {
   .hero-glow { background: radial-gradient(ellipse at top, var(--accent), var(--background) 70%); }
   .glow-frame { box-shadow: 0 0 0 6px var(--primary), 0 0 50px 10px color-mix(in oklch, var(--primary) 60%, transparent); }
   .cta-glow { box-shadow: 0 10px 30px -5px color-mix(in oklch, var(--primary) 55%, transparent); }
+  .cover-kicker { color: var(--primary-foreground); text-shadow: 0 2px 10px oklch(0 0 0 / 30%); }
+  .cover-title { color: var(--cover-accent); text-shadow: 0 3px 12px oklch(0 0 0 / 40%); }
+  .blossom-layer { z-index: 20; opacity: .56; }
+  .blossom-layer canvas { display: block; width: 100%; height: 100%; }
+  @media (prefers-reduced-motion: reduce) { .blossom-layer { display: none; } }
 }
