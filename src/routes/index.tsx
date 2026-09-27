@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Calendar, DollarSign, Gift, Image, Sparkles, Store, Wrench } from "lucide-react";
-import hero from "@/assets/pham-hang-cover.jpg";
-import avatarAsset from "@/assets/pham-hang-portrait.png.asset.json";
+import hero from "@/assets/pham-hang-cover-professional.png";
+import avatar from "@/assets/pham-hang-avatar-professional.png";
 import { CherryBlossoms } from "@/components/CherryBlossoms";
 import { Button } from "@/components/ui/button";
 
@@ -49,13 +49,16 @@ function Index() {
         <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-primary/40 bg-accent px-5 py-2 text-sm font-bold">
           <Calendar className="h-5 w-5 text-primary" /> 20:00 ngày 21/9
         </div>
-        <div className="glow-frame relative mx-auto mt-7 aspect-[16/9] max-w-5xl overflow-hidden rounded-lg bg-foreground">
-          <img src={hero} alt="Phạm Hằng trong ảnh bìa workshop" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-y-0 left-0 flex w-[56%] flex-col justify-center px-[5%] text-left">
-            <p className="cover-kicker text-sm font-bold uppercase md:text-2xl">Nuôi AI Agent</p>
-            <p className="cover-title mt-1 text-3xl font-black uppercase leading-[1.12] md:text-7xl">Cày tiền</p>
-            <span className="mt-4 h-1 w-12 bg-cover-accent md:w-20" />
+        <div className="workshop-cover mx-auto mt-8 max-w-5xl overflow-hidden rounded-2xl text-left">
+          <div className="workshop-cover-copy">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200 sm:text-sm">Workshop cùng Phạm Hằng</p>
+            <p className="mt-5 text-2xl font-semibold text-white sm:text-4xl">Nuôi AI Agent</p>
+            <p className="mt-2 text-4xl font-extrabold leading-tight text-amber-200 sm:text-6xl md:text-7xl">Cày tiền</p>
+            <span className="mt-6 block h-0.5 w-14 bg-amber-200/70" />
+            <p className="mt-6 max-w-xs text-sm leading-relaxed text-slate-300 sm:text-base">Từ skill tiến hóa thành một Agent sống thực sự.</p>
+            <p className="mt-8 text-sm font-semibold tracking-wide text-white">PHẠM HẰNG</p>
           </div>
+          <img src={hero} alt="Phạm Hằng mặc vest xanh trong không gian làm việc" className="workshop-cover-photo" fetchPriority="high" width={1024} height={1536} />
         </div>
         <div className="mt-9"><Cta /></div>
       </section>
@@ -82,7 +85,9 @@ function Index() {
         <h2 className="text-center text-3xl font-extrabold text-primary">Diễn giả Huấn luyện cấp tốc</h2>
         <div className="mt-8 flex flex-col items-center gap-8 border-t border-b py-8 md:flex-row md:items-start">
           <div className="relative shrink-0">
-            <img src={avatarAsset.url} alt="Phạm Hằng" className="h-36 w-36 rounded-full object-cover object-top shadow-lg" />
+            <div className="h-44 w-44 overflow-hidden rounded-full border-4 border-white shadow-xl ring-1 ring-primary/20">
+              <img src={avatar} alt="Chân dung diễn giả Phạm Hằng" className="h-full w-full origin-top scale-[1.4] object-cover object-top" loading="lazy" width={1145} height={1374} />
+            </div>
           </div>
           <div className="text-center md:text-left">
             <h3 className="text-3xl font-extrabold">Phạm Hằng</h3>

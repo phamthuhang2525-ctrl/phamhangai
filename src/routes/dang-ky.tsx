@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, CheckCircle2, MessageCircle, QrCode, Send } from "lucide-react";
-import paymentQrAsset from "@/assets/pham-hang-payment-qr.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/dang-ky")({
@@ -24,7 +23,7 @@ const steps = [
   {
     icon: QrCode,
     title: "Bước 1 — Quét QR & chuyển khoản 50.000đ",
-    detail: "Mở ứng dụng ngân hàng trên điện thoại, quét mã QR bên dưới (hoặc nhập số tài khoản) và chuyển khoản đúng số tiền 50.000đ. Ghi chú nội dung: HỌ TÊN + SỐ ĐIỆN THOẠI để dễ đối soát.",
+    detail: "Mở ứng dụng ngân hàng, quét mã QR phía trên hoặc chọn ảnh QR đã lưu từ thư viện. Kiểm tra ngân hàng Techcombank, người nhận PHAM THI THU HANG, số tài khoản 19031368761668. Nhập 50.000đ và nội dung: HỌ TÊN + SỐ ĐIỆN THOẠI, sau đó xác nhận chuyển khoản.",
   },
   {
     icon: MessageCircle,
@@ -54,7 +53,10 @@ function Registration() {
         <section className="mt-8 border-t border-b py-7 text-center" aria-label="Thông tin thanh toán">
           <p className="text-sm font-medium text-muted-foreground">Số tiền thanh toán</p>
           <p className="mt-1 text-4xl font-extrabold text-primary">50.000đ</p>
-          <img src={paymentQrAsset.url} alt="Mã QR chuyển khoản Techcombank cho PHAM THI THU HANG" className="mx-auto mt-6 w-full max-w-[290px] object-contain" />
+          <div className="relative mx-auto mt-6 aspect-[557/625] w-full max-w-[320px] overflow-hidden rounded-2xl bg-white shadow-sm">
+            <img src="/pham-hang-payment-qr.jpg" alt="Mã QR chuyển khoản Techcombank cho PHAM THI THU HANG, số tài khoản 19031368761668" className="absolute h-auto max-w-none" style={{ width: "155.84%", left: "-28.01%", top: "-73.28%" }} />
+          </div>
+          <a href="/pham-hang-payment-qr.jpg" download="QR-Thanh-Toan-Pham-Hang.jpg" className="mt-4 inline-block rounded-lg border border-primary/30 px-5 py-2 text-sm font-semibold text-primary hover:bg-accent">Tải ảnh QR về điện thoại</a>
           <div className="mt-5 text-sm leading-relaxed">
             <p className="font-bold">TECHCOMBANK · PHAM THI THU HANG</p>
             <p className="font-semibold">1903 1368 7616 68</p>
@@ -63,7 +65,7 @@ function Registration() {
         </section>
 
         <section className="mt-10" aria-label="Hướng dẫn sau khi thanh toán">
-          <h2 className="text-center text-xl font-extrabold uppercase text-primary">Hướng dẫn sau khi thanh toán</h2>
+          <h2 className="text-center text-xl font-extrabold uppercase text-primary">Cách thanh toán & xác nhận</h2>
           <div className="mt-6 space-y-4">
             {steps.map((s) => (
               <div key={s.title} className="flex gap-4 rounded-2xl border border-l-4 border-l-primary bg-card p-5 shadow-sm">
@@ -82,11 +84,12 @@ function Registration() {
         <section className="mt-10 rounded-2xl border border-primary/30 bg-accent/60 p-6 text-center">
           <p className="text-sm font-semibold">Đã chuyển khoản xong?</p>
           <p className="mt-1 text-sm text-muted-foreground">Nhắn tin ngay qua Zalo <span className="font-bold text-foreground">{ZALO_DISPLAY}</span> để giữ chỗ của bạn.</p>
-          <Button asChild className="cta-glow mt-5 h-auto w-full rounded-md px-8 py-4 text-base font-bold uppercase transition-transform hover:scale-105">
+          <Button asChild className="cta-glow mt-5 h-auto w-full whitespace-normal rounded-md px-4 py-4 text-sm font-bold uppercase transition-transform hover:scale-105">
             <a href={ZALO_CONFIRM} target="_blank" rel="noopener noreferrer">
               <Send aria-hidden="true" /> Xác nhận qua Zalo {ZALO_DISPLAY}
             </a>
           </Button>
+          <p className="mt-4 text-xs leading-relaxed text-muted-foreground">Gửi ảnh biên lai, họ tên và số điện thoại. Đăng ký được xác nhận sau khi Phạm Hằng kiểm tra giao dịch và phản hồi qua Zalo.</p>
         </section>
 
         <p className="mt-8 text-center text-xs text-muted-foreground">
